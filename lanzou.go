@@ -55,7 +55,7 @@ func (c *LanZouCloud) postData(par interface{}) {
 	tmpHeader := header.Clone()
 	tmpHeader["Content-Type"] = "application/x-www-form-urlencoded"
 	resp, _ := c.client.Post("https://lanzous.com/ajaxm.php", tmpHeader, par)
-	var res = gjson.GetMany(resp.String(), "dom", "Url")
+	var res = gjson.GetMany(resp.String(), "dom", "url")
 	var builder strings.Builder
 	builder.WriteString(res[0].String())
 	builder.WriteString(`/file/`)
@@ -76,7 +76,7 @@ func (c *LanZouCloud) getDirectByPwd() {
 		log.Println(err)
 		return
 	}
-	reg, _ := regexp.Compile(`data : '(.+)'\+Pwd`)
+	reg, _ := regexp.Compile(`data : '(.+)'\+pwd`)
 	par := reg.FindStringSubmatch(resp.String())[1] + c.Pwd
 	c.postData(par)
 }
