@@ -1,4 +1,4 @@
-module github.com/vintingb/lanzou-api
+module github.com/vintingb/lanZouApi
 
 go 1.16
 
