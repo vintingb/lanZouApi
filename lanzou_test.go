@@ -1,4 +1,4 @@
-package lanzou_api
+package lanZouApi
 
 import "testing"
 
