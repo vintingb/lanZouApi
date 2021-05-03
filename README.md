@@ -1,7 +1,7 @@
 ## 安装
 
 ```sh
-$ go get -u github.com/vintingb/lanzou-api
+$ go get -u github.com/vintingb/lanZouApi
 ```
 
 ## 使用
