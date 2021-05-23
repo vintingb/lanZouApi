@@ -54,7 +54,7 @@ func (c *LanZouCloud) Do() {
 func (c *LanZouCloud) postData(par interface{}) {
 	tmpHeader := header.Clone()
 	tmpHeader["Content-Type"] = "application/x-www-form-urlencoded"
-	resp, _ := c.client.Post("https://lanzous.com/ajaxm.php", tmpHeader, par)
+	resp, _ := c.client.Post("https://lanzoui.com/ajaxm.php", tmpHeader, par)
 	var res = gjson.GetMany(resp.String(), "dom", "url")
 	var builder strings.Builder
 	builder.WriteString(res[0].String())
